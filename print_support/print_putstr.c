@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_putstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 19:46:03 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/11 20:16:56 by jvictor-         ###   ########.fr       */
+/*   Created: 2021/08/11 20:47:41 by jvictor-          #+#    #+#             */
+/*   Updated: 2021/08/11 20:51:42 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../printf.h"
 
-int ft_printf(const char *print, ...)
+size_t  print_putstr(char *c)
 {
-    size_t amount;
-    va_list args;
+    int i;
 
-    amount = 0;
-    va_start(args, print);
-    while (*print)
+	if (!c)
+		return (write(1, "(null)", 6));
+    i = 0;
+    while(c[i])
     {
-        if (*print == '%' && ft_strchr("cspduixX%", *(print + 1)))
-            amount += print_specifier(args, *++print);
-        else
-            amount += write(1, &(*print), 1);
-        print++;
+        write(1, &c[i], 1);
+        i++;
     }
-    va_end(args);
-    return (amount);
-
+    return(i);
 }

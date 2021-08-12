@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 20:04:57 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/07 20:28:26 by jvictor-         ###   ########.fr       */
+/*   Updated: 2021/08/11 22:08:16 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,11 @@ typedef struct s_types
 } t_types;
 
 int ft_printf(const char *, ...);
+
+size_t  print_specifier(va_list args, char c);
+size_t  print_putchar(char c);
+size_t  print_putstr(char *c);
+size_t  print_digit(int c);
+size_t  print_unsigned(unsigned int c);
 
 #endif

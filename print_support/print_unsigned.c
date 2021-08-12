@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 19:46:03 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/11 20:16:56 by jvictor-         ###   ########.fr       */
+/*   Created: 2021/08/11 22:05:53 by jvictor-          #+#    #+#             */
+/*   Updated: 2021/08/11 22:07:41 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int ft_printf(const char *print, ...)
+static size_t  unsignedintlen(unsigned int c)
 {
-    size_t amount;
-    va_list args;
+    size_t i;
 
-    amount = 0;
-    va_start(args, print);
-    while (*print)
+    i = 0;
+    if (c == 0)
+		return (1);
+    while (c)
     {
-        if (*print == '%' && ft_strchr("cspduixX%", *(print + 1)))
-            amount += print_specifier(args, *++print);
-        else
-            amount += write(1, &(*print), 1);
-        print++;
+        c /= 10;
+        i++;
     }
-    va_end(args);
-    return (amount);
+    return (i);
+}
 
+size_t  print_unsigned(unsigned int c)
+{
+    if (c >= 10)
+        print_digit(c / 10);
+    print_putchar((char)(c % 10) + 48);
+    return (unsignedintlen(c));
 }
