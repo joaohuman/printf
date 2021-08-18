@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   specifier.c                                        :+:      :+:    :+:   */
+/*   print_specifier.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 20:11:40 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/11 20:36:02 by jvictor-         ###   ########.fr       */
+/*   Updated: 2021/08/12 21:37:25 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t  print_specifier(va_list args, char c)
     else if (c == 'u')
         count = print_unsigned(types.u_uint = va_arg(args, unsigned int));
     else if (c == 'x' || c == 'X')
-        count = print_hexa(types.xX_uint = va_arg(args, unsigned int));
+        count = print_hexa(types.xX_uint = va_arg(args, unsigned int), c);
     else if(c == '%')
         count = print_putchar(c);
     return (count);
