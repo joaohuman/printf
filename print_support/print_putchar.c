@@ -6,14 +6,14 @@
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 20:43:27 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/11 20:46:23 by jvictor-         ###   ########.fr       */
+/*   Updated: 2021/08/18 22:36:11 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t  print_putchar(char c)
+size_t	print_putchar(char c)
 {
-    write(1, &c, 1);
-    return(1);
+	write(1, &c, 1);
+	return (1);
 }
