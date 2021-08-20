@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 20:04:57 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/18 22:20:11 by jvictor-         ###   ########.fr       */
+/*   Updated: 2021/08/19 20:44:16 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ size_t	print_putstr(char *c);
 size_t	print_digit(int c);
 size_t	print_unsigned(unsigned int c);
 size_t	print_hexa(unsigned int hex, char c);
+size_t	print_pointer(size_t arg);
 
 #endif

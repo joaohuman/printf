@@ -6,7 +6,7 @@
 /*   By: jvictor- <jvictor-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 20:11:40 by jvictor-          #+#    #+#             */
-/*   Updated: 2021/08/18 22:24:35 by jvictor-         ###   ########.fr       */
+/*   Updated: 2021/08/19 22:42:36 by jvictor-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	print_specifier(va_list args, char c)
 
 	count = 0;
 	if (c == 'c')
-		count = print_putchar(types.c_char = va_arg(args, char));
+		count = print_putchar(types.c_char = va_arg(args, int));
 	else if (c == 's')
 		count = print_putstr(types.s_string = va_arg(args, char *));
 	else if (c == 'p')
